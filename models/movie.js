@@ -62,9 +62,8 @@ const userSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: String,
+    type: Number,
     required: true,
-    default: 'id MoviesExplorer',
   },
   nameRU: {
     type: String,
