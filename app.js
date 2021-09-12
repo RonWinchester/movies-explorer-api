@@ -8,6 +8,7 @@ const { errors } = require('celebrate');
 const router = require('./routes/index');
 const { errorHandler } = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const limiter = require('./utils/limiter');
 
 // Слушаем 3000 порт
 const { PORT = 3000 } = process.env;
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(helmet());
 app.use(requestLogger);
+app.use(limiter);
 app.use(router);
 app.use(errorLogger);
 app.use(errors());
