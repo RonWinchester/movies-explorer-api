@@ -9,6 +9,7 @@ const router = require('./routes/index');
 const { errorHandler } = require('./middlewares/errorHandler');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const limiter = require('./utils/limiter');
+const { allowCors } = require('./middlewares/cors');
 
 // Слушаем 3000 порт
 const { PORT = 3000 } = process.env;
@@ -23,6 +24,7 @@ mongoose.connect('mongodb://localhost:27017/bitfilmsdb', {
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(allowCors);
 
 app.use(helmet());
 app.use(requestLogger);
