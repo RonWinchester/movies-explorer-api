@@ -1,11 +1,10 @@
-
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
 
 const allowedCors = [
-  'https://polugrudov.nomoredomains.club/',
-  'http://polugrudov.nomoredomains.club/',
-  'https://polugrudov.nomoredomains.club',
-  'http://polugrudov.nomoredomains.club',
+  'https://polugrudov.ru/',
+  'http://polugrudov.ru/',
+  'https://polugrudov.ru',
+  'http://polugrudov.ru',
   'http://localhost:3000',
 ];
 
