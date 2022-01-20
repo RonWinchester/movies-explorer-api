@@ -22,7 +22,7 @@ module.exports.login = (req, res, next) => {
         .cookie('jwt', token, {
           expires: new Date(Date.now() + 60 * 24 * 3600000),
           // httpOnly: true,
-          httpOnly: false,
+          httpOnly: true,
           sameSite: 'None',
           // secure: true,
           secure: false,
