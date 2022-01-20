@@ -16,11 +16,17 @@ const { PORT = 3000 } = process.env;
 const app = express();
 
 // подключаемся к серверу mongo
-mongoose.connect('mongodb://localhost:27017/bitfilmsdb', {
-  useNewUrlParser: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
-});
+mongoose
+  .connect(
+    'mongodb+srv://RonWinchester:49249@cluster0.wb7mu.mongodb.net/bitfilmsdb?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
+    },
+  )
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.log(err));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
