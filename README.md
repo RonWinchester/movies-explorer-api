@@ -17,4 +17,4 @@
 2. Наличие MongoDB
 
 Домен 
-https://api.polugrudov.nomoredomains.club/
+https://api.polugrudov.ru/
