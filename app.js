@@ -13,13 +13,12 @@ const { allowCors } = require('./middlewares/cors');
 
 // Слушаем 3000 порт
 const { PORT = 3000 } = process.env;
-const { PASS } = process.env;
 const app = express();
 
 // подключаемся к серверу mongo
 mongoose
   .connect(
-    `mongodb+srv://RonWinchester:${PASS}@cluster0.wb7mu.mongodb.net/bitfilmsdb?retryWrites=true&w=majority`,
+    'mongodb://localhost:27017/bitfilmsdb',
     {
       useNewUrlParser: true,
       useCreateIndex: true,
